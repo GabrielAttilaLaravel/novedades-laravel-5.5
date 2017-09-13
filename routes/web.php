@@ -10,7 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::view('/', 'welcome', [
+    'name' => 'GabrielAttila'
+]);
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// tipo de redireccion por defecto 301
+// 301: permanente
+// 302: temporal
+Route::redirect('welcome', '/', 302);
