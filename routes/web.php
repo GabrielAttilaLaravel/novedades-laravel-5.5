@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use Illuminate\Support\Facades\Mail;
+
 Route::view('/', 'welcome', [
     'name' => 'GabrielAttila'
 ]);
@@ -18,3 +20,9 @@ Route::view('/', 'welcome', [
 // 301: permanente
 // 302: temporal
 Route::redirect('welcome', '/', 302);
+
+Route::get('email', function (){
+    //Mail::to('gabrieljmorenot@gmail.com')->send(new \App\Mail\WelcomeUser());
+    // 5.5
+    return new \App\Mail\WelcomeUser('GabrielAttila');
+});
