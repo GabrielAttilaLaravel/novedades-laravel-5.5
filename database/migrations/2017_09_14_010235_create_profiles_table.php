@@ -17,7 +17,7 @@ class CreateProfilesTable extends Migration
             $table->increments('id');
 
             $table->mediumText('bio');
-            $table->string('twitter');
+            $table->string('twitter')->unique();
             $table->string('github');
 
             $table->unsignedInteger('user_id');
