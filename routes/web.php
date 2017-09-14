@@ -26,3 +26,7 @@ Route::get('email', function (){
     // 5.5
     return new \App\Mail\WelcomeUser('GabrielAttila');
 });
+
+Route::get('profile', function (){
+    return factory(\App\Profile::class)->create();
+});
