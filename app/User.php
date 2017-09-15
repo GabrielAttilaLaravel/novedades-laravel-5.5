@@ -26,4 +26,11 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function profile()
+    {
+        // un usuario tiene un perfil
+        // nos aseguramos que el usuario tenga un perfil por defecto con (withDefault)
+        return $this->hasOne(Profile::class)->withDefault();
+    }
 }

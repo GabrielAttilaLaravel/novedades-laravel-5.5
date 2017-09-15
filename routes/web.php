@@ -30,3 +30,5 @@ Route::get('email', function (){
 Route::get('profile', function (){
     return factory(\App\Profile::class)->create();
 });
+
+Route::put('profile', 'ProfileController@update');

@@ -6,9 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Profile extends Model
 {
+    protected $fillable = ['bio', 'twitter', 'github'];
+
     public function user()
     {
-        return $this->hasOne(User::class);
+        // el perfil de usuario pertenece al usuario
+        return $this->belongsTo(User::class);
     }
 
     public function getTwitterUrlAttribute()
